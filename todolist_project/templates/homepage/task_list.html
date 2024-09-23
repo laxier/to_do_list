@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="{% url 'homepage:task-create' %}">Add Item</a>
-<table>
-    <tr>
-        Item
-    </tr>
-    {% for task in tasks %}
+    {% include 'includes/search.html' %}
+    <a href="{% url 'homepage:task-create' %}">Add Item</a>
+    <table>
         <tr>
-            <td>{{ task.title }}</td>
-            <td><a href="{% url 'homepage:task-update' task.id %}">Edit</a></td>
-            <td><a href="{% url 'homepage:task-delete' task.id %}">Delete</a></td>
+            Item
         </tr>
-    {% empty %}
-        <h3>No items</h3>
-    {% endfor %}
-</table>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td><a href="{% url 'homepage:task-update' task.id %}">Edit</a></td>
+                <td><a href="{% url 'homepage:task-delete' task.id %}">Delete</a></td>
+            </tr>
+        {% empty %}
+            <h3>No items</h3>
+        {% endfor %}
+    </table>
 {% endblock %}
