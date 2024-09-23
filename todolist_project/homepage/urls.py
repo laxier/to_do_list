@@ -5,5 +5,6 @@ from . import views
 app_name = 'homepage'
 
 urlpatterns = [
-    path('', views.taskList, name='tasks')
+    path('', views.TaskList.as_view(), name='tasks'),
+    path('task/<int:pk>/', views.TaskDetail.as_view(), name='detail')
 ]
