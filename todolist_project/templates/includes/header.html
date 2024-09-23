@@ -1,0 +1,10 @@
+<header>
+    <h1>ToDo List</h1>
+    {% if request.user.is_authenticated %}
+        <p>{{ request.user }}
+            <a href="">Log out</a>
+        </p>
+    {% else %}
+        <a href="">Log in</a>
+    {% endif %}
+</header>

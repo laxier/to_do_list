@@ -1,4 +1,6 @@
-<h1>ToDo List</h1>
+{% extends 'base.html' %}
+
+{% block content %}
 <a href="{% url 'homepage:task-create' %}">Add Item</a>
 <table>
     <tr>
@@ -14,3 +16,4 @@
         <h3>No items</h3>
     {% endfor %}
 </table>
+{% endblock %}
