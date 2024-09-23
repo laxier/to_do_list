@@ -9,4 +9,3 @@ class Login(LoginView):
 
     def get_redirect_url(self):
         return reverse_lazy('homepage:tasks')
-
